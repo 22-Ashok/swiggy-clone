@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import MenuCardList from "./menuCard";
 
 const ResturantCategory = ({MenuData,showIndex,setShowIndex,i}) => {
@@ -13,12 +12,10 @@ const ResturantCategory = ({MenuData,showIndex,setShowIndex,i}) => {
         <div className="bg-[#f0f0f0] cursor-pointer" key={title} onClick={toggleFun}> 
          <div className="  my-3 p-2 flex justify-between items-center min-h-16">
           <h1 className="font-bold text-lg" >{title}({itemCards.length})</h1>
-
-          {/* solve problem */}
-          <span>{showIndex == i ? '🔼' : '🔽' }  </span>                      
+          <span>{showIndex ? '🔼' : '🔽' }  </span>                      
          </div>
 
-         {showIndex && itemCards.map((e)=> <MenuCardList cards={e} /> )}
+         {showIndex && itemCards.map((e)=> <MenuCardList card={e} /> )}
          
       </div>
 
